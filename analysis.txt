@@ -1,0 +1,51 @@
+RUNNING TIME : TIME & SPACE COMPLEXITY:
+
+SelectionSort:
+Time Complexity: Big O (n^2), each for loop takes linear time so having to make its n squared.
+
+Space Complexity: Big O (1), allocates a constant amount of space with tempCount.
+
+BubbleSort:
+Time Complexity: Big O (n^2), since I check with a boolean to see if it is sorted already it would have a smaller time
+complexity. But since it is not sorted it will remain at Big O (n^2) as I needed to iterate through the whole array
+n times twice.
+
+Space Complexity: Big O (1), as it is not already sorted it would not be Big O (n) so it is Big O (1) (constant space),
+because only one single additional value is required for tmp variable. Which happens in the swap function in the interface.
+
+InsertionSort:
+Time Complexity: Big O (n^2), since I move the whole sorted array by 1 during each for loop. Doing it twice would make
+it n * n for n^2 time complexity.
+
+Space Complexity: Big O (1), constant because tmp variable is the only additional memory space required.
+And the copying of the tmp is happening to the reference array not the array itself.
+
+MergeSort:
+Time Complexity: Big O (n (log(n))), because the algorithm always splits the array in two halves and when merge gets
+used it takes linear time to merge all the sub arrays together. It is log(n) because when you start merging the arrays
+back together you will have checked the whole array in fewer steps as the arrays sort quicker.
+
+Space Complexity: Big O (n), merge sort would run twice for arrays that are half its original array which would
+impact the space in a linear way. The merge step is the one that heavily impacts the space.
+
+QuickSort:
+Time Complexity: Big O (n (log(n))), the partitioning of a quicksort algorithm is Big O (n) time while the recursive
+calls are Big O (n (log(n))), so when multiplying these together you get N log N for time complexity.
+
+Space Complexity: Big O (n (log(n))), at each recursive call a new stack frame of constant size must be allocated which
+like I explained in the time complexity gives a log N allocation of space throughout until sorted.
+
+HybridSort:
+Time Complexity: Big O (n (log(n))), I am not 100% sure about this but I believe it is like this as the combination of a
+quadraticsort (insertion), the fastest out of the three N^2 algorthims and quicksort cut down the time to the best case
+scenario which is N log N for this sorting method. THe mix between the two and to simplify what the sorting method would
+be would make it a N log N time complexity.
+
+Space Complexity: Big O (n (log(n))), I believe this is Big (1) because if the quicksort is not needed to be used in the
+sorting method then the insertionsort algorithm would take over isntead and I think for the majority of the time it did.
+Since I believe it did it would have a space complexity of 1. It is either quicksort was used then it would be N log N
+or insertionsort was used and it was constant space.
+
+REASON I USED INSERTION SORT: Since I struggled on the hybridsort implementation I went online to look for some resources
+and found that using insertion sort as the quadraticsort algorithm in this implementation was the easiest thing to use.
+It also just generally made sense since InsertionSort is the fastest out of the three N^2 algorithms.
